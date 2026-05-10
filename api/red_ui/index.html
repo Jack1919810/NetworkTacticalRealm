@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Red Team Console</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <h1>Red Team Console</h1>
+
+  <div class="toolbar">
+    Red team token:
+    <input id="token" type="text" placeholder="X-Team-Token (stored locally only)"/>
+    <button class="btn" id="saveToken">Save</button>
+    <small id="saveMsg"></small>
+  </div>
+
+  <div class="row">
+    <div class="card">
+      <h3>Pseudo terminal</h3>
+      <p>Only supports <code>curl</code> / <code>nc</code>; targets limited to blue hosts; 5s timeout.</p>
+      <div>
+        <input id="cmd" class="wide" placeholder='e.g. curl http://vulnbox_blue1/' />
+        <button class="btn" id="run">Run</button>
+      </div>
+      <div id="targets"></div>
+      <pre id="output" class="term"></pre>
+    </div>
+
+    <div class="card">
+      <h3>Submit FLAG</h3>
+      <input id="flag" class="wide" placeholder="FLAG{...}" />
+      <button class="btn" id="submit">Submit</button>
+      <pre id="submsg"></pre>
+      <h3>Submission History</h3>
+      <ul id="submit-history" style="list-style:none; padding-left:0; margin-top:8px;"></ul>
+    </div>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>

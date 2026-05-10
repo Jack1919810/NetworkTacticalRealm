@@ -1,0 +1,16 @@
+body { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "PingFang SC", "Microsoft YaHei", sans-serif; margin: 20px; }
+h1 { margin: 0 0 10px 0; }
+small { color: #666; }
+.row { display: grid; gap: 16px; grid-template-columns: 1fr 1fr; align-items: start; }
+.card { border: 1px solid #e5e7eb; border-radius: 10px; padding: 14px; box-shadow: 0 1px 2px rgba(0,0,0,.03); }
+table { width: 100%; border-collapse: collapse; }
+th, td { padding: 8px 10px; border-bottom: 1px solid #eee; text-align: left; }
+th { background: #fafafa; position: sticky; top: 0; }
+.btn { padding: 8px 12px; border: 1px solid #ddd; background: #fff; border-radius: 8px; cursor: pointer; }
+.btn:hover { background: #f6f6f6; }
+.btn.danger { border-color:#fca5a5; color:#b91c1c; }
+.ok { color: #16a34a; font-weight: 600; }
+.bad { color: #dc2626; font-weight: 600; }
+.toolbar { display:flex; gap:8px; flex-wrap:wrap; align-items:center; }
+input[type=text] { padding:8px 10px; border:1px solid #ddd; border-radius:8px; width:280px; }
+#msg { white-space:pre-wrap;background:#0b1021;color:#d5d8ff;border-radius:8px;padding:10px;min-height:120px; }

@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Blue Console · EduAWD</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <h1>Blue Team Console</h1>
+
+  <div class="card">
+    <h3>My Token</h3>
+    <input id="token" type="text" placeholder="x_team_token (stored locally only)" />
+    <button class="btn" id="saveToken">Save</button>
+    <small id="saveMsg"></small>
+  </div>
+
+  <div class="row">
+    <div class="card">
+      <h3>My Info</h3>
+      <pre id="me"></pre>
+    </div>
+    <div class="card">
+      <h3>Online Status</h3>
+      <pre id="status"></pre>
+      <button class="btn" id="recheck">Request immediate check</button>
+      <small id="recheckMsg"></small>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Recent Attacks (accepted)</h3>
+    <table id="attacks">
+      <thead>
+        <tr><th>Time</th><th>Attacker</th><th>Service</th><th>Verdict</th><th>FLAG (truncated)</th></tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>How to access my vulnbox</h3>
+    <p>Default local mapping in development: <code>http://127.0.0.1:20081</code> → <code>vulnbox_blue1:80</code>.</p>
+    <p>If your Compose ports differ, use your actual port.</p>
+  </div>
+
+  <!-- ===== Exec panel: run restricted commands and see results on this page ===== -->
+  <div class="card">
+    <h3>Vulnbox Interaction (restricted commands)</h3>
+    <p>Only allows whitelisted commands such as curl/nc/ping/tail/cat/ls/grep. Requests are sent to <code>http://127.0.0.1:20081/exec</code> (change to your actual port if needed).</p>
+
+    <div style="display:flex; gap:8px; align-items:center; margin-bottom:8px; flex-wrap:wrap;">
+      <input id="cmdInput" style="flex:1; min-width:260px;" placeholder="Example: curl -I http://127.0.0.1:80/">
+      <button class="btn" id="cmdSend">Send</button>
+      <button class="btn" id="cmdClear">Clear</button>
+      <button class="btn" id="cmdSample">Sample</button>
+    </div>
+
+    <pre id="cmdLog" style="height:240px; overflow:auto; background:#f9f9f9; padding:8px; margin-top:8px;"></pre>
+    <small>Note: the backend validates the token and the command; commands with dangerous characters will be rejected.</small>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>

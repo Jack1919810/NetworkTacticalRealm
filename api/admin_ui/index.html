@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>EduAWD · Admin Panel</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <h1>NetworkTacticalRealm · Admin Panel</h1>
+
+  <div class="toolbar">
+    Admin Token:
+    <input id="adm" type="text" placeholder="X-Admin-Token (stored locally only)"/>
+    <button class="btn" id="saveBtn">Save</button>
+    <small id="savedMsg"></small>
+  </div>
+
+  <p class="toolbar" style="margin-top:8px">
+    <button class="btn" data-action="rotate">Rotate Flags Now</button>
+    <button class="btn" data-action="check">Run Checks Now</button>
+    <button class="btn" data-action="soft">Soft Reset</button>
+    <button class="btn danger" data-action="hard">Hard Reset</button>
+    <small>API: <code>/admin/rotate_now</code> <code>/admin/check_now</code> <code>/admin/reset_soft</code> <code>/admin/reset_hard</code></small>
+  </p>
+
+  <div class="row">
+    <div class="card">
+      <h3>Scoreboard</h3>
+      <table id="score">
+        <thead>
+          <tr>
+            <th>Team</th><th>Role</th><th>SLA</th><th>Attack</th><th>Total</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <small>From <code>/scoreboard</code>, refreshes every 5s.</small>
+    </div>
+
+    <div class="card">
+      <h3>Recent Submissions</h3>
+      <table id="subs">
+        <thead>
+          <tr>
+            <th>Time</th><th>Attacker</th><th>Victim</th><th>Service</th><th>Verdict</th><th>FLAG (truncated)</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <small>From <code>/admin/recent_submissions</code>, refreshes every 5s.</small>
+    </div>
+
+    <div class="card">
+      <h3>Last Online Checks</h3>
+      <div id="lastChecks"></div>
+      <small>From <code>/admin/last_checks</code>, refreshes every 5s.</small>
+    </div>
+
+    <div class="card">
+      <h3>Debug Log</h3>
+      <pre id="msg"></pre>
+    </div>
+  </div>
+
+  <script src="./app.js?v=9"></script>
+</body>
+</html>
