@@ -46,7 +46,7 @@ NetworkTacticalRealm runs a live red-vs-blue exercise: blue teams defend their o
 
 ```bash
 # 1. Clone and configure secrets
-git clone https://github.com/<your-handle>/NetworkTacticalRealm.git
+git clone https://github.com/Jack1919810/NetworkTacticalRealm.git
 cd NetworkTacticalRealm
 cp .env.example .env
 
