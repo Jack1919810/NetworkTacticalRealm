@@ -1,5 +1,6 @@
 # NetworkTacticalRealm
-
+![API Docs](docs/api-docs.png)
+![Admin Panel](docs/admin-panel.png)
 **A containerised Attack-Defense (AWD) CTF platform for cybersecurity education.**
 
 NetworkTacticalRealm runs a live red-vs-blue exercise: blue teams defend their own vulnerable services ("vulnboxes"), red teams attack the others, flags rotate every tick, and an automated checker continuously scores both attack success and service availability (SLA).

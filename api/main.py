@@ -77,7 +77,9 @@ def get_db():
     finally:
         db.close()
 
-app = FastAPI(title="EduAWD (MVP)")
+app = FastAPI(title="NetworkTacticalRealm",
+    description="Containerised Attack-Defense (AWD) CTF platform",
+    version="0.1.0",)
 scheduler = AsyncIOScheduler(timezone=timezone.utc)
 TICK_SEC = 120
 ATTACK_POINTS = 10
